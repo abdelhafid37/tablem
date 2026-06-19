@@ -18,7 +18,7 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = React.useState(false);
 
   return (
-    <header className="sticky top-0 h-20 flex items-center justify-center bg-background z-50">
+    <header className="sticky top-0 h-20 border-b border-white/50 flex items-center justify-center bg-background z-50">
       <Container>
         <div className="flex items-center justify-between">
           <nav className="hidden md:flex items-center gap-8 flex-1">
@@ -55,7 +55,7 @@ export default function Navbar() {
                   exit={{ x: "100%" }}
                   transition={{
                     ease: "easeInOut",
-                    delay: 0.2,
+                    duration: 0.2,
                   }}
                   className="md:hidden absolute right-0 top-0 h-dvh w-full bg-background/20 backdrop-blur-md"
                 />

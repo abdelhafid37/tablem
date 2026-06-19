@@ -3,15 +3,12 @@
 @theme inline {
   --font-display: var(--font-italiana);
   --font-body: var(--font-geist);
-
-  --color-background: #0a0a0a;
-  --color-surface: #171717;
-
-  --color-foreground: #fafafa;
-  --color-muted: #a1a1aa;
-
-  --color-primary: #d4af37;
-  --color-primary-hover: #b8962e;
+  --color-background: oklch(14.479% 0.00002 271.152);
+  --color-surface: oklch(20.463% 0.00002 271.152);
+  --color-foreground: oklch(98.511% 0.00011 271.152);
+  --color-muted: oklch(71.182% 0.01302 285.981);
+  --color-primary: oklch(76.652% 0.13861 91.065);
+  --color-primary-hover: oklch(68.625% 0.12409 89.982);
 }
 
 @layer base {

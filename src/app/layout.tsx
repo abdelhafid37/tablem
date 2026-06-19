@@ -30,7 +30,7 @@ export default function RootLayout({
       <body className={`${italiana.variable} ${geist.variable} antialiased`}>
         <ReactLenis root>
           <Navbar />
-          {children}
+          <main>{children}</main>
         </ReactLenis>
       </body>
     </html>
