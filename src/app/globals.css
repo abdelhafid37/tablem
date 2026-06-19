@@ -1,6 +1,21 @@
 @import "tailwindcss";
 
-@theme {
+@theme inline {
   --font-display: var(--font-italiana);
   --font-body: var(--font-geist);
+
+  --color-background: #0a0a0a;
+  --color-surface: #171717;
+
+  --color-foreground: #fafafa;
+  --color-muted: #a1a1aa;
+
+  --color-primary: #d4af37;
+  --color-primary-hover: #b8962e;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground font-body overflow-x-hidden;
+  }
 }

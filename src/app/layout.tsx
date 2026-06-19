@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Italiana, Geist } from "next/font/google";
+import ReactLenis from "lenis/react";
+import Navbar from "@/components/layout/Navbar";
 import "./globals.css";
 
 const italiana = Italiana({
@@ -26,7 +28,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${italiana.variable} ${geist.variable} antialiased`}>
-        {children}
+        <ReactLenis root>
+          <Navbar />
+          {children}
+        </ReactLenis>
       </body>
     </html>
   );
