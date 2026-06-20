@@ -18,7 +18,7 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = React.useState(false);
 
   return (
-    <header className="sticky top-0 h-20 border-b border-white/50 flex items-center justify-center bg-background z-50">
+    <header className="sticky top-0 h-20 flex items-center justify-center bg-surface z-50">
       <Container>
         <div className="flex items-center justify-between">
           <nav className="hidden md:flex items-center gap-8 flex-1">

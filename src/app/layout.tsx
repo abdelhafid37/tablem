@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Italiana, Geist } from "next/font/google";
+import { Geist, Gloock } from "next/font/google";
 import ReactLenis from "lenis/react";
 import Navbar from "@/components/layout/Navbar";
 import "./globals.css";
 
-const italiana = Italiana({
-  variable: "--font-italiana",
+const gloock = Gloock({
+  variable: "--font-gloock",
   subsets: ["latin"],
   weight: ["400"],
 });
@@ -13,6 +13,7 @@ const italiana = Italiana({
 const geist = Geist({
   variable: "--font-geist",
   subsets: ["latin"],
+  weight: ["400", "500", "600"],
 });
 
 export const metadata: Metadata = {
@@ -27,7 +28,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${italiana.variable} ${geist.variable} antialiased`}>
+      <body className={`${gloock.variable} ${geist.variable} antialiased`}>
         <ReactLenis root>
           <Navbar />
           <main>{children}</main>

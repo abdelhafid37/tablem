@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme inline {
-  --font-display: var(--font-italiana);
+  --font-display: var(--font-gloock);
   --font-body: var(--font-geist);
   --color-background: oklch(14.479% 0.00002 271.152);
   --color-surface: oklch(20.463% 0.00002 271.152);
