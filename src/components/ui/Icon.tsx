@@ -1,3 +1,3 @@
 "use client";
 
-export { ArrowCircleUpRightIcon, ListIcon, XIcon } from "@phosphor-icons/react";
+export { ArrowUpRightIcon, ListIcon, XIcon } from "@phosphor-icons/react";

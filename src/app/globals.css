@@ -3,16 +3,16 @@
 @theme inline {
   --font-display: var(--font-gloock);
   --font-body: var(--font-geist);
-  --color-background: oklch(14.479% 0.00002 271.152);
-  --color-surface: oklch(20.463% 0.00002 271.152);
-  --color-foreground: oklch(98.511% 0.00011 271.152);
-  --color-muted: oklch(71.182% 0.01302 285.981);
-  --color-primary: oklch(76.652% 0.13861 91.065);
-  --color-primary-hover: oklch(68.625% 0.12409 89.982);
+  --color-brand: oklch(61.794% 0.11706 60.387);
+  --color-brand-hover: oklch(53.71% 0.10424 58.458);
+  --color-bg: oklch(97.08% 0.00847 84.494);
+  --color-surface: oklch(100% 0.00011 271.152);
+  --color-text: oklch(22.645% 0.00003 271.152);
+  --color-muted: oklch(52.78% 0.00006 271.152);
 }
 
 @layer base {
   body {
-    @apply bg-background text-foreground font-body overflow-x-hidden;
+    @apply bg-bg text-text font-body overflow-x-hidden;
   }
 }

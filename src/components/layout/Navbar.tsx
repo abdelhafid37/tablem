@@ -6,6 +6,8 @@ import Link from "next/link";
 import Button from "../ui/Button";
 import { ListIcon, XIcon } from "../ui/Icon";
 import { AnimatePresence, motion } from "framer-motion";
+import { useLenis } from "lenis/react";
+import Lenis from "lenis";
 
 const navigation = [
   { label: "Home", href: "/" },
@@ -16,14 +18,32 @@ const navigation = [
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = React.useState(false);
+  const [elevate, setElevate] = React.useState(false);
+  const lenis = useLenis();
+
+  React.useEffect(() => {
+    if (!lenis) return;
+
+    const whileScroll = ({ scroll }: Lenis) => setElevate(scroll > 50);
+
+    lenis.on("scroll", whileScroll);
+    return () => lenis.off("scroll", whileScroll);
+  }, [lenis]);
 
   return (
-    <header className="sticky top-0 h-20 flex items-center justify-center bg-surface z-50">
+    <header
+      data-elevate={elevate}
+      className="sticky top-0 h-20 flex items-center justify-center bg-bg text-text z-50 data-[elevate=true]:bg-surface transition-colors duration-300"
+    >
       <Container>
         <div className="flex items-center justify-between">
           <nav className="hidden md:flex items-center gap-8 flex-1">
             {navigation.map(({ href, label }, i) => (
-              <Link key={i} href={href} className="hover:text-primary">
+              <Link
+                key={i}
+                href={href}
+                className="hover:text-brand transition-colors duration-300"
+              >
                 {label}
               </Link>
             ))}
@@ -32,9 +52,9 @@ export default function Navbar() {
           <div className="flex-1 md:text-center">
             <Link
               href={"/"}
-              className="text-xl font-semibold tracking-widest font-display text-primary"
+              className="text-2xl font-semibold tracking-wide font-display text-text"
             >
-              TableM
+              Table M
             </Link>
           </div>
 
@@ -49,7 +69,7 @@ export default function Navbar() {
               {menuOpen && (
                 <motion.div
                   onClick={() => setMenuOpen(false)}
-                  key={"overlay"}
+                  key="overlay"
                   initial={{ x: "100%" }}
                   animate={{ x: 0 }}
                   exit={{ x: "100%" }}
@@ -57,12 +77,12 @@ export default function Navbar() {
                     ease: "easeInOut",
                     duration: 0.2,
                   }}
-                  className="md:hidden absolute right-0 top-0 h-dvh w-full bg-background/20 backdrop-blur-md"
+                  className="md:hidden fixed inset-0 h-dvh w-full bg-bg/20 backdrop-blur-md"
                 />
               )}
               {menuOpen && (
                 <motion.div
-                  key={"menu"}
+                  key="menu"
                   initial={{ x: "100%" }}
                   animate={{ x: 0 }}
                   exit={{ x: "100%" }}
@@ -70,7 +90,7 @@ export default function Navbar() {
                     ease: "easeInOut",
                     duration: 0.4,
                   }}
-                  className="md:hidden fixed right-0 top-0 h-dvh w-8/12 bg-background flex flex-col"
+                  className="md:hidden fixed right-0 top-0 h-dvh w-8/12 bg-bg flex flex-col"
                 >
                   <div className="flex justify-end h-20 px-6">
                     <button
@@ -86,7 +106,8 @@ export default function Navbar() {
                         <Link
                           key={i}
                           href={href}
-                          className="hover:text-primary"
+                          className="hover:text-brand"
+                          onClick={() => setMenuOpen(false)}
                         >
                           {label}
                         </Link>
