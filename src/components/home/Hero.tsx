@@ -9,7 +9,7 @@ const content = {
   text: "Step into Tablem, an intimate Marrakech sanctuary where centuries-old culinary traditions are elevated into contemporary masterpieces. Indulge in an exquisite multi-course tasting menu crafted from hand-selected organic ingredients, rare Atlas Mountain spices, and avant-garde techniques.",
   cta: "Reserve Your Table",
   img: {
-    src: "/images/hero/restaurant.webp",
+    src: "/images/home/hero.webp",
     alt: "restaurant interior design",
   },
 };
