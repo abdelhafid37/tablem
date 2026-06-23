@@ -20,7 +20,7 @@ export default function MenuCard({
         </div>
 
         {description && (
-          <p className="text-muted leading-relaxed text-sm mt-3 max-w-xs">
+          <p className="text-muted leading-relaxed text-sm mt-3">
             {description}
           </p>
         )}
