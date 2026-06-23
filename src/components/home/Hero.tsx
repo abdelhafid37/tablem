@@ -27,6 +27,7 @@ export default function Hero() {
           src={content.img.src}
           alt={content.img.alt}
           className="aspect-4/5"
+          priority
         />
       </div>
     </Section>

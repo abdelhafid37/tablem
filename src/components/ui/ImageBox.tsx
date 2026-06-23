@@ -4,6 +4,7 @@ interface IImageBox {
   src: string;
   alt: string;
   className?: string;
+  sizes?: string;
   priority?: boolean;
 }
 
@@ -12,6 +13,7 @@ export default function ImageBox({
   src,
   className = "",
   priority = false,
+  sizes = "",
 }: IImageBox) {
   return (
     <div className={`relative overflow-hidden ${className}`}>
@@ -20,7 +22,7 @@ export default function ImageBox({
         alt={alt}
         className="object-cover"
         fill
-        sizes=""
+        sizes={sizes}
         priority={priority}
       />
     </div>
