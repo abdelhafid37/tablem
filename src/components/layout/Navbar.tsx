@@ -8,13 +8,7 @@ import { ListIcon, XIcon } from "../ui/Icon";
 import { AnimatePresence, motion } from "framer-motion";
 import { useLenis } from "lenis/react";
 import Lenis from "lenis";
-
-const navigation = [
-  { label: "Home", href: "/" },
-  { label: "Menu", href: "/menu" },
-  { label: "About", href: "/about" },
-  { label: "Contact", href: "/contact" },
-];
+import { navigation } from "@/data/navigation";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = React.useState(false);
