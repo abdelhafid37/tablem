@@ -2,7 +2,7 @@ import { dishes } from "@/data/dishes";
 import Section from "../layout/Section";
 import Heading from "../ui/Heading";
 import Text from "../ui/Text";
-import MenuCard from "../menu/MenuCard";
+import MenuGrid from "../menu/MenuGrid";
 
 const content = {
   title: "Signature Dishes",
@@ -19,11 +19,7 @@ export default function FeaturedDishes() {
           <Heading>{content.title}</Heading>
           <Text>{content.text}</Text>
         </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {featuredDishes.map((dish) => (
-            <MenuCard key={dish.id} dish={dish} />
-          ))}
-        </div>
+        <MenuGrid dishes={featuredDishes} />
       </div>
     </Section>
   );
