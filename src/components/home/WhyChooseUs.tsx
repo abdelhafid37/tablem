@@ -4,8 +4,8 @@ import Heading from "../ui/Heading";
 import Text from "../ui/Text";
 
 const content = {
-  title: "Why Choose Table M",
-  text: "More than a restaurant, Table M combines Moroccan hospitality, quality ingredients, and a welcoming atmosphere to create memorable dining experiences.",
+  title: "Why Guests Love Table M",
+  text: "From outdoor seating and vegan-friendly options to all-day dining, Table M offers a welcoming experience for every guest.",
 };
 
 export default function WhyChooseUs() {

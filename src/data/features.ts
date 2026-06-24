@@ -7,20 +7,20 @@ export interface IFeature {
 export const features: IFeature[] = [
   {
     id: 1,
-    title: "Moroccan Heritage",
+    title: "Outdoor Seating",
     description:
-      "A menu inspired by authentic Moroccan traditions and flavors, thoughtfully reimagined for a modern dining experience.",
+      "Enjoy breakfast, lunch, or dinner in a relaxed outdoor setting in the heart of Marrakech.",
   },
   {
     id: 2,
-    title: "Fresh Ingredients",
+    title: "Vegan Options",
     description:
-      "Every dish is prepared using carefully selected ingredients to ensure quality, freshness, and consistency.",
+      "A variety of carefully prepared dishes designed to suit different dietary preferences.",
   },
   {
     id: 3,
-    title: "Welcoming Atmosphere",
+    title: "Open Until Late",
     description:
-      "Whether you're enjoying breakfast, lunch, or dinner, Table M offers a comfortable setting for every occasion.",
+      "From early morning breakfasts to late-night dining, Table M welcomes guests throughout the day.",
   },
 ];
