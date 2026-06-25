@@ -3,6 +3,7 @@ import { Geist, Gloock } from "next/font/google";
 import ReactLenis from "lenis/react";
 import Navbar from "@/components/layout/Navbar";
 import "./globals.css";
+import Footer from "@/components/layout/Footer";
 
 const gloock = Gloock({
   variable: "--font-gloock",
@@ -32,6 +33,7 @@ export default function RootLayout({
         <ReactLenis root>
           <Navbar />
           <main>{children}</main>
+          <Footer />
         </ReactLenis>
       </body>
     </html>
