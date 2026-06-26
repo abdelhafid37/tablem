@@ -5,11 +5,11 @@ import * as React from "react";
 import Section from "@/components/layout/Section";
 import CategoryFilter from "@/components/menu/CategoryFilter";
 import MenuGrid from "@/components/menu/MenuGrid";
-import Heading from "@/components/ui/Heading";
 import Text from "@/components/ui/Text";
 
-import { categories, Catgory } from "@/data/categories";
+import { Catgory } from "@/data/categories";
 import { dishes } from "@/data/dishes";
+import Display from "@/components/ui/Display";
 
 const content = {
   title: "Our Menu",
@@ -28,7 +28,7 @@ export default function MenuPage() {
     <Section>
       <div className="space-y-12">
         <div className="max-w-xl space-y-6">
-          <Heading>{content.title}</Heading>
+          <Display>{content.title}</Display>
           <Text>{content.text}</Text>
         </div>
         <CategoryFilter
