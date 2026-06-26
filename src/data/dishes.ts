@@ -1,9 +1,11 @@
+import { Catgory } from "./categories";
+
 export interface IDish {
   id: number;
   name: string;
   description?: string;
   price: number;
-  category: string;
+  category: Exclude<Catgory, "all">;
   image: string;
   featured?: boolean;
 }
@@ -19,7 +21,6 @@ export const dishes: IDish[] = [
     image: "/images/placeholder.webp",
     featured: true,
   },
-
   {
     id: 2,
     name: "Salade Table M",
@@ -29,7 +30,6 @@ export const dishes: IDish[] = [
     image: "/images/placeholder.webp",
     featured: true,
   },
-
   {
     id: 3,
     name: "Pizza Table M",
@@ -39,7 +39,6 @@ export const dishes: IDish[] = [
     image: "/images/placeholder.webp",
     featured: true,
   },
-
   {
     id: 4,
     name: "Maghribi Breakfast",
@@ -49,7 +48,6 @@ export const dishes: IDish[] = [
     image: "/images/placeholder.webp",
     featured: true,
   },
-
   {
     id: 5,
     name: "Pasta Seafood",
@@ -59,14 +57,37 @@ export const dishes: IDish[] = [
     image: "/images/placeholder.webp",
     featured: true,
   },
-
   {
     id: 6,
     name: "Pastilla Fruits de Mer",
     description: "Une spécialité marocaine raffinée aux fruits de mer.",
     price: 95,
-    category: "moroccan",
+    category: "main-course",
     image: "/images/placeholder.webp",
     featured: true,
+  },
+  {
+    id: 7,
+    name: "Chicken Brochette",
+    description: "Grilled chicken skewers served with fries, rice and salad.",
+    price: 89,
+    category: "main-course",
+    image: "/images/placeholder.webp",
+  },
+  {
+    id: 8,
+    name: "Chicken Club Sandwich",
+    description: "Grilled chicken, lettuce, tomato and cheese.",
+    price: 79,
+    category: "sandwich",
+    image: "/images/placeholder.webp",
+  },
+  {
+    id: 9,
+    name: "Cheeseburger",
+    description: "Beef burger with cheddar cheese and fries.",
+    price: 95,
+    category: "burger",
+    image: "/images/placeholder.webp",
   },
 ];
