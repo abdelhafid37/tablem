@@ -1,7 +1,5 @@
 import Section from "../layout/Section";
-import Button from "../ui/Button";
 import Display from "../ui/Display";
-import Heading from "../ui/Heading";
 import ImageBox from "../ui/ImageBox";
 import Text from "../ui/Text";
 
