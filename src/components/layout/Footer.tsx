@@ -12,7 +12,7 @@ const content = {
 
 export default function Footer() {
   return (
-    <footer className="bg-surface border-t border-text/10">
+    <footer className="bg-surface">
       <Section>
         <div className="grid md:grid-cols-[2fr_1fr_2fr] gap-12">
           <div className="space-y-4">

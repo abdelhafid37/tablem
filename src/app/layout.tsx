@@ -4,6 +4,7 @@ import ReactLenis from "lenis/react";
 import Navbar from "@/components/layout/Navbar";
 import "./globals.css";
 import Footer from "@/components/layout/Footer";
+import Noise from "@/components/ui/Noise";
 
 const gloock = Gloock({
   variable: "--font-gloock",
@@ -31,6 +32,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${gloock.variable} ${geist.variable} antialiased`}>
         <ReactLenis root>
+          <Noise />
           <Navbar />
           <main className="pt-20">{children}</main>
           <Footer />
