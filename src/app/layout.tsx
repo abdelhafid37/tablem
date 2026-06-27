@@ -32,7 +32,7 @@ export default function RootLayout({
       <body className={`${gloock.variable} ${geist.variable} antialiased`}>
         <ReactLenis root>
           <Navbar />
-          <main>{children}</main>
+          <main className="pt-20">{children}</main>
           <Footer />
         </ReactLenis>
       </body>
