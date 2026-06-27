@@ -25,11 +25,19 @@ const content = {
     },
     {
       src: "/images/about/gallery/gallery-5.webp",
-      alt: "Restaurant interior",
+      alt: "",
     },
     {
       src: "/images/about/gallery/gallery-6.webp",
-      alt: "Signature dish",
+      alt: "",
+    },
+    {
+      src: "/images/about/gallery/gallery-5.webp",
+      alt: "",
+    },
+    {
+      src: "/images/about/gallery/gallery-6.webp",
+      alt: "",
     },
   ],
 };
