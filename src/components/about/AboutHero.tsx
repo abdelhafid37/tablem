@@ -25,6 +25,7 @@ export default function AboutHero() {
           src={content.image.src}
           alt={content.image.alt}
           className="aspect-4/5"
+          parallax
         />
       </div>
     </Section>

@@ -22,6 +22,7 @@ export default function AboutPreview() {
           src={content.image.src}
           alt={content.image.alt}
           className="aspect-4/5"
+          parallax
         />
 
         <div className="space-y-6 max-w-xl">

@@ -58,6 +58,7 @@ export default function Gallery() {
               src={image.src}
               alt={image.alt}
               className="aspect-square"
+              parallax
             />
           ))}
         </div>
