@@ -1,15 +1,14 @@
 import { contact } from "@/data/contact";
 import Section from "../layout/Section";
-import Button from "../ui/Button";
 import Heading from "../ui/Heading";
 import Text from "../ui/Text";
 
 const content = {
-  title: "Visit Table M",
-  text: "Experience modern Moroccan dining in the heart of Marrakech. Enjoy our signature dishes, fresh ingredients, and a welcoming atmosphere from morning until late night.",
+  title: "Visit Us",
+  text: "Find us in the heart of Marrakech and enjoy our welcoming atmosphere from breakfast until late night.",
 };
 
-export default function ContactPreview() {
+export default function ContactInfo() {
   return (
     <Section>
       <div className="space-y-12">
@@ -35,8 +34,6 @@ export default function ContactPreview() {
             <p className="text-muted">{contact.hours}</p>
           </div>
         </div>
-
-        <Button label="Get Directions" href={contact.map} />
       </div>
     </Section>
   );
