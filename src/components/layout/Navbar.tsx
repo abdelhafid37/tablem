@@ -49,7 +49,7 @@ export default function Navbar() {
       animate={{ y: hidden ? "-100%" : 0 }}
       transition={{ duration: 0.3, ease: "easeOut" }}
       data-elevate={elevate}
-      className="fixed top-0 left-0 right-0 h-20 flex items-center justify-center text-text z-50 data-[elevate=true]:bg-surface transition-colors duration-300"
+      className="fixed top-0 left-0 right-0 h-16 flex items-center justify-center text-text z-50 data-[elevate=true]:bg-surface transition-colors duration-300"
     >
       <Container>
         <div className="flex items-center justify-between">

@@ -34,7 +34,7 @@ export default function RootLayout({
         <ReactLenis root>
           <Noise />
           <Navbar />
-          <main className="pt-20">{children}</main>
+          <main className="pt-16">{children}</main>
           <Footer />
         </ReactLenis>
       </body>
