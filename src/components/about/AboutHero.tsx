@@ -1,6 +1,7 @@
 import Section from "../layout/Section";
 import Display from "../ui/Display";
-import ImageBox from "../ui/ImageBox";
+import ImageFrame from "../ui/ImageFrame";
+import Reveal from "../ui/Reveal";
 import Text from "../ui/Text";
 
 const content = {
@@ -17,16 +18,23 @@ export default function AboutHero() {
     <Section>
       <div className="grid lg:grid-cols-2 items-center gap-12">
         <div className="space-y-6 max-w-xl">
-          <Display>{content.title}</Display>
-          <Text>{content.text}</Text>
+          <Reveal>
+            <Display>{content.title}</Display>
+          </Reveal>
+          <Reveal delay={0.1}>
+            <Text>{content.text}</Text>
+          </Reveal>
         </div>
 
-        <ImageBox
-          src={content.image.src}
-          alt={content.image.alt}
-          className="aspect-4/5"
-          parallax
-        />
+        <Reveal delay={0.15}>
+          <ImageFrame
+            src={content.image.src}
+            alt={content.image.alt}
+            className="aspect-4/5"
+            sizes="(min-width: 1024px) 50vw, 100vw"
+            parallax
+          />
+        </Reveal>
       </div>
     </Section>
   );

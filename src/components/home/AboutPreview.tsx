@@ -1,12 +1,13 @@
 import Section from "../layout/Section";
 import Button from "../ui/Button";
-import Heading from "../ui/Heading";
-import ImageBox from "../ui/ImageBox";
-import Text from "../ui/Text";
+import ImageFrame from "../ui/ImageFrame";
+import Reveal from "../ui/Reveal";
+import SectionIntro from "../ui/SectionIntro";
 
 const content = {
+  eyebrow: "OUR STORY",
   title: "A Modern Taste of Marrakech",
-  text: "Table M brings together Moroccan hospitality, contemporary flavors, and carefully crafted dishes in a warm and elegant setting. From traditional breakfasts to signature specialties, every detail is designed to create memorable dining experiences.",
+  text: "Inspired by Moroccan traditions and a modern approach to cooking, Table M is a place where every meal is meant to be enjoyed slowly—with family, friends, and great conversation.",
   cta: "Discover Our Story",
   image: {
     src: "/images/home/about-preview.webp",
@@ -18,17 +19,25 @@ export default function AboutPreview() {
   return (
     <Section>
       <div className="grid lg:grid-cols-2 items-center gap-12">
-        <ImageBox
-          src={content.image.src}
-          alt={content.image.alt}
-          className="aspect-4/5"
-          parallax
-        />
+        <Reveal delay={0.15}>
+          <ImageFrame
+            src={content.image.src}
+            alt={content.image.alt}
+            className="aspect-4/5"
+            parallax
+          />
+        </Reveal>
 
-        <div className="space-y-6 max-w-xl">
-          <Heading>{content.title}</Heading>
-          <Text>{content.text}</Text>
-          <Button label={content.cta} href="/about" />
+        <div className="space-y-6">
+          <SectionIntro
+            title={content.title}
+            eyebrow={content.eyebrow}
+            text={content.text}
+          />
+
+          <Reveal delay={0.24}>
+            <Button label={content.cta} href="/about" />
+          </Reveal>
         </div>
       </div>
     </Section>

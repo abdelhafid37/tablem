@@ -4,25 +4,27 @@ import * as React from "react";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 
-interface ImageBoxProps {
+interface ImageFrameProps {
   src: string;
   alt: string;
   className?: string;
   sizes?: string;
   priority?: boolean;
   parallax?: boolean;
+  hover?: boolean;
 }
 
 const PARALLAX_OFFSET = 60;
 
-export default function ImageBox({
+export default function ImageFrame({
   alt,
   src,
   className = "",
   priority = false,
-  sizes = "",
+  sizes = "100vw",
   parallax = false,
-}: ImageBoxProps) {
+  hover = false,
+}: ImageFrameProps) {
   const ref = React.useRef<HTMLDivElement>(null);
 
   const { scrollYProgress } = useScroll({
@@ -45,7 +47,13 @@ export default function ImageBox({
           fill
           priority={priority}
           sizes={sizes}
-          className={parallax ? "object-cover scale-110" : "object-cover"}
+          className={`object-cover will-change-transform transition-[transform,filter] duration-700 ease-out ${parallax ? "scale-110" : ""} ${
+            hover
+              ? parallax
+                ? "group-hover:scale-[1.13] group-hover:brightness-110"
+                : "group-hover:scale-105 group-hover:brightness-110"
+              : ""
+          }`}
         />
       </motion.div>
     </div>

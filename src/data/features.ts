@@ -7,20 +7,19 @@ export interface IFeature {
 export const features: IFeature[] = [
   {
     id: 1,
-    title: "Outdoor Seating",
+    title: "Fresh Every Day",
     description:
-      "Enjoy breakfast, lunch, or dinner in a relaxed outdoor setting in the heart of Marrakech.",
+      "Every meal is prepared with fresh ingredients selected daily.",
   },
   {
     id: 2,
-    title: "Vegan Options",
+    title: "Made to Share",
     description:
-      "A variety of carefully prepared dishes designed to suit different dietary preferences.",
+      "From breakfast spreads to signature dishes, our menu brings people together.",
   },
   {
     id: 3,
-    title: "Open Until Late",
-    description:
-      "From early morning breakfasts to late-night dining, Table M welcomes guests throughout the day.",
+    title: "Morning to Midnight",
+    description: "Join us for breakfast, lunch, dinner, or a late-night bite.",
   },
 ];

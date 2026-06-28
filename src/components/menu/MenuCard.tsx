@@ -1,5 +1,5 @@
 import { IDish } from "@/data/dishes";
-import ImageBox from "../ui/ImageBox";
+import ImageFrame from "../ui/ImageFrame";
 
 export default function MenuCard({
   dish: { image, name, price, description },
@@ -7,20 +7,22 @@ export default function MenuCard({
   dish: IDish;
 }) {
   return (
-    <article>
-      <ImageBox
+    <article className="group">
+      <ImageFrame
         alt={name}
         src={image ?? "/images/placeholder.webp"}
-        className="aspect-square brightness-50"
+        hover
+        className="aspect-square"
+        sizes="(min-width:1024px) 33vw, (min-width:768px) 50vw, 100vw"
       />
       <div className="mt-5">
         <div className="flex justify-between items-center gap-4">
           <h3 className="font-display text-2xl">{name}</h3>
-          <span className="text-brand font-medium shrink-0">{price} MAD</span>
+          <span className="text-brand font-medium shrink-0">{price} dh</span>
         </div>
 
         {description && (
-          <p className="text-muted leading-relaxed text-sm mt-3">
+          <p className="text-muted leading-relaxed text-base mt-3">
             {description}
           </p>
         )}

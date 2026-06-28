@@ -1,5 +1,6 @@
 import Section from "../layout/Section";
 import Heading from "../ui/Heading";
+import Reveal from "../ui/Reveal";
 import Text from "../ui/Text";
 
 const content = {
@@ -14,10 +15,14 @@ export default function Story() {
   return (
     <Section>
       <div className="max-w-3xl space-y-6">
-        <Heading>{content.title}</Heading>
+        <Reveal>
+          <Heading>{content.title}</Heading>
+        </Reveal>
 
         {content.paragraphs.map((paragraph, index) => (
-          <Text key={index}>{paragraph}</Text>
+          <Reveal key={index} delay={index * 0.08}>
+            <Text>{paragraph}</Text>
+          </Reveal>
         ))}
       </div>
     </Section>

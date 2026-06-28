@@ -10,8 +10,11 @@ import Text from "@/components/ui/Text";
 import { Catgory } from "@/data/categories";
 import { dishes } from "@/data/dishes";
 import Display from "@/components/ui/Display";
+import Reveal from "@/components/ui/Reveal";
+import SectionIntro from "@/components/ui/SectionIntro";
 
 const content = {
+  eyebrow: "",
   title: "Our Menu",
   text: "Explore our carefully crafted selection of breakfasts, signature dishes, desserts, and refreshing drinks.",
 };
@@ -27,18 +30,23 @@ export default function MenuPage() {
   return (
     <Section>
       <div className="space-y-12">
-        <div className="max-w-xl space-y-6">
-          <Display>{content.title}</Display>
-          <Text>{content.text}</Text>
-        </div>
+        <SectionIntro
+          eyebrow={content.eyebrow}
+          title={content.title}
+          text={content.text}
+        />
+
         <CategoryFilter
           activeCategory={activeCategory}
           onCategoryChange={setActiveCategory}
         />
+
         {filteredDishes.length > 0 ? (
           <MenuGrid dishes={filteredDishes} />
         ) : (
-          <p className="text-muted">No dishes found.</p>
+          <Reveal>
+            <p className="text-muted">No dishes found.</p>
+          </Reveal>
         )}
       </div>
     </Section>

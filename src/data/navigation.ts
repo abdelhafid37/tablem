@@ -4,7 +4,6 @@ export interface ILink {
 }
 
 export const navigation: ILink[] = [
-  { label: "Home", href: "/" },
   { label: "Menu", href: "/menu" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },

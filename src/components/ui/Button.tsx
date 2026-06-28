@@ -20,8 +20,8 @@ export default function Button({
       <span>{label}</span>
       <ArrowUpRightIcon
         size={18}
-        weight="regular"
-        className="transition-transform duration-300 group-hover:translate-x-1"
+        weight="bold"
+        className="transition-transform duration-300 group-hover:translate-x-0.5"
       />
     </>
   );

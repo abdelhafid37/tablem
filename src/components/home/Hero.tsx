@@ -1,12 +1,13 @@
 import Section from "../layout/Section";
 import Button from "../ui/Button";
 import Display from "../ui/Display";
-import ImageBox from "../ui/ImageBox";
+import ImageFrame from "../ui/ImageFrame";
+import Reveal from "../ui/Reveal";
 import Text from "../ui/Text";
 
 const content = {
-  title: "Where Moroccan Heritage Meets Modern Dining",
-  text: "Step into Tablem, an intimate Marrakech sanctuary where centuries-old culinary traditions are elevated into contemporary masterpieces. Indulge in an exquisite multi-course tasting menu crafted from hand-selected organic ingredients, rare Atlas Mountain spices, and avant-garde techniques.",
+  title: "Modern Moroccan Food Made to Be Shared",
+  text: "From relaxed breakfasts to late-night dinners, every dish is prepared with fresh ingredients, local inspiration, and a love for bringing people together.",
 
   img: {
     src: "/images/home/hero.webp",
@@ -19,17 +20,26 @@ export default function Hero() {
     <Section>
       <div className="grid lg:grid-cols-2 items-center gap-12">
         <div className="space-y-6 max-w-xl">
-          <Display>{content.title}</Display>
-          <Text>{content.text}</Text>
-          <Button label="Explore Menu" />
+          <Reveal>
+            <Display>{content.title}</Display>
+          </Reveal>
+          <Reveal delay={0.1}>
+            <Text>{content.text}</Text>
+          </Reveal>
+          <Reveal delay={0.2}>
+            <Button label="Explore Menu" />
+          </Reveal>
         </div>
-        <ImageBox
-          src={content.img.src}
-          alt={content.img.alt}
-          className="aspect-4/5"
-          priority
-          parallax
-        />
+        <Reveal delay={0.15}>
+          <ImageFrame
+            src={content.img.src}
+            alt={content.img.alt}
+            className="aspect-4/5"
+            sizes="(min-width: 1024px) 50vw, 100vw"
+            priority
+            parallax
+          />
+        </Reveal>
       </div>
     </Section>
   );

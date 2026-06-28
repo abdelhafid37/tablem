@@ -1,9 +1,12 @@
 import Section from "../layout/Section";
 import Heading from "../ui/Heading";
-import ImageBox from "../ui/ImageBox";
+import ImageFrame from "../ui/ImageFrame";
+import Reveal from "../ui/Reveal";
+import SectionIntro from "../ui/SectionIntro";
 import Text from "../ui/Text";
 
 const content = {
+  eyebrow: "",
   title: "Inside Table M",
   text: "Take a glimpse inside Table M, where elegant interiors, carefully prepared dishes, and a welcoming atmosphere come together to create memorable dining experiences.",
   images: [
@@ -46,20 +49,22 @@ export default function Gallery() {
   return (
     <Section>
       <div className="space-y-12">
-        <div className="space-y-6 max-w-xl">
-          <Heading>{content.title}</Heading>
-          <Text>{content.text}</Text>
-        </div>
+        <SectionIntro
+          title={content.title}
+          eyebrow={content.eyebrow}
+          text={content.text}
+        />
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
           {content.images.map((image, index) => (
-            <ImageBox
-              key={index}
-              src={image.src}
-              alt={image.alt}
-              className="aspect-square"
-              parallax
-            />
+            <Reveal key={index} delay={index * 0.08}>
+              <ImageFrame
+                src={image.src}
+                alt={image.alt}
+                className="aspect-square"
+                parallax
+              />
+            </Reveal>
           ))}
         </div>
       </div>

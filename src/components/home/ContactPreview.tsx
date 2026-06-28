@@ -1,42 +1,60 @@
 import { contact } from "@/data/contact";
 import Section from "../layout/Section";
 import Button from "../ui/Button";
-import Heading from "../ui/Heading";
-import Text from "../ui/Text";
+import Reveal from "../ui/Reveal";
+import SectionIntro from "../ui/SectionIntro";
 
 const content = {
-  title: "Visit Table M",
-  text: "Experience modern Moroccan dining in the heart of Marrakech. Enjoy our signature dishes, fresh ingredients, and a welcoming atmosphere from morning until late night.",
+  eyebrow: "VISIT US",
+  title: "Find Us in Marrakech",
+  text: "Whether you're stopping by for breakfast, dinner, or just a coffee, we'd love to welcome you.",
+  cta: "Get Directions",
 };
 
 export default function ContactPreview() {
   return (
     <Section>
       <div className="space-y-12">
-        <div className="max-w-xl space-y-6">
-          <Heading>{content.title}</Heading>
-          <Text>{content.text}</Text>
-        </div>
+        <SectionIntro
+          title={content.title}
+          eyebrow={content.eyebrow}
+          text={content.text}
+        />
 
         <div className="grid md:grid-cols-3 gap-8">
-          <div className="border-t border-text/10 pt-6">
-            <h3 className="font-display text-xl mb-2">Location</h3>
-            <p className="text-muted leading-relaxed">{contact.address}</p>
-          </div>
-
-          <div className="border-t border-text/10 pt-6">
-            <h3 className="font-display text-xl mb-2">Contact</h3>
-            <p className="text-muted">{contact.phone}</p>
-            <p className="text-muted mt-2">{contact.instagram}</p>
-          </div>
-
-          <div className="border-t border-text/10 pt-6">
-            <h3 className="font-display text-xl mb-2">Hours</h3>
-            <p className="text-muted">{contact.hours}</p>
-          </div>
+          <Reveal delay={0.2}>
+            <div className="border-t border-text/10 pt-6">
+              <h3 className="font-display text-xl mb-2">Location</h3>
+              <p className="text-muted leading-relaxed">{contact.address}</p>
+            </div>
+          </Reveal>
+          <Reveal delay={0.3}>
+            <div className="border-t border-text/10 pt-6">
+              <h3 className="font-display text-xl mb-2">Contact</h3>
+              <p className="text-muted">{contact.phone}</p>
+              <p className="text-muted mt-2">{contact.instagram}</p>
+            </div>
+          </Reveal>
+          <Reveal delay={0.4}>
+            <div className="border-t border-text/10 pt-6">
+              <h3 className="font-display text-xl mb-2">Hours</h3>
+              <p className="text-muted">
+                Mon - Thu
+                <br />
+                {contact.hours.weekdays}
+              </p>
+              <p className="text-muted mt-3">
+                Fri - Sun
+                <br />
+                {contact.hours.weekends}
+              </p>
+            </div>
+          </Reveal>
         </div>
 
-        <Button label="Get Directions" href={contact.map} />
+        <Reveal delay={0.45}>
+          <Button label={content.cta} href={contact.map} />
+        </Reveal>
       </div>
     </Section>
   );
