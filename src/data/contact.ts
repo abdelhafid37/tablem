@@ -1,6 +1,7 @@
 export const contact = {
   address: "Prestigia, Bd Mohamed VI, Marrakech 40000, Morocco",
   phone: "+212 52 438 9621",
+  phoneHref: "+212524389621",
   instagram: "@tablem_marrakech",
   hours: {
     weekdays: "8:00 AM - 2:00 AM",

@@ -11,6 +11,8 @@ import Lenis from "lenis";
 import { navigation } from "@/data/navigation";
 import Logo from "../ui/Logo";
 
+const SCROLL_THRESHOLD = 50;
+
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = React.useState(false);
   const [elevate, setElevate] = React.useState(false);
@@ -18,7 +20,6 @@ export default function Navbar() {
   const lastScrollRef = React.useRef(0);
 
   const lenis = useLenis();
-  const SCROLL_THRESHOLD = 50;
 
   React.useEffect(() => {
     const scroll = window.scrollY;

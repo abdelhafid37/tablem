@@ -9,11 +9,10 @@ export default function Logo({
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 600 914"
       preserveAspectRatio="xMidYMid meet"
-      aria-label="Table M Logo"
-      role="img"
       width="48"
       height="73"
-      aria-hidden
+      aria-hidden="true"
+      focusable="false"
       className={className}
       {...props}
     >

@@ -61,9 +61,7 @@ export default function Footer() {
               <Reveal delay={0.2}>
                 <div className="flex items-center gap-3">
                   <PhoneIcon className="shrink-0" />
-                  <a href={`tel:${contact.phone.replace(/\s+/g, "")}`}>
-                    {contact.phone}
-                  </a>
+                  <a href={`tel:${contact.phoneHref}`}>{contact.phone}</a>
                 </div>
               </Reveal>
               <Reveal delay={0.3}>
