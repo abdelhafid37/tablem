@@ -34,7 +34,7 @@ export default function ContactInfo() {
               <h3 className="font-display text-xl mb-2">Contact</h3>
               <a
                 href={contact.phone.href}
-                className="text-muted hover:text-brand duration-300 transition-colors"
+                className="text-muted block hover:text-brand duration-300 transition-colors"
               >
                 {contact.phone.label}
               </a>
