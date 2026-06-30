@@ -1,7 +1,5 @@
 import { contact } from "@/data/contact";
 import Section from "../layout/Section";
-import Heading from "../ui/Heading";
-import Text from "../ui/Text";
 import Reveal from "../ui/Reveal";
 import SectionIntro from "../ui/SectionIntro";
 

@@ -1,6 +1,5 @@
 import { features } from "@/data/features";
 import Section from "../layout/Section";
-
 import Reveal from "../ui/Reveal";
 import SectionIntro from "../ui/SectionIntro";
 
