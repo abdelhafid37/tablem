@@ -18,15 +18,19 @@ export default function Footer() {
       <Section>
         <div className="grid md:grid-cols-[2fr_1fr_2fr] gap-12">
           <div className="space-y-4">
-            <div className="flex items-center gap-3">
-              <Logo className="w-10 h-auto text-brand" />
-              <h2 className="font-display text-3xl text-brand">
-                {content.name}
-              </h2>
-            </div>
-            <p className="text-muted leading-relaxed max-w-sm">
-              {content.description}
-            </p>
+            <Reveal>
+              <div className="flex items-center gap-3">
+                <Logo className="w-10 h-auto text-brand" />
+                <h2 className="font-display text-3xl text-brand">
+                  {content.name}
+                </h2>
+              </div>
+            </Reveal>
+            <Reveal delay={0.1}>
+              <p className="text-muted leading-relaxed max-w-sm">
+                {content.description}
+              </p>
+            </Reveal>
           </div>
 
           <div className="space-y-4">
@@ -61,18 +65,24 @@ export default function Footer() {
               <Reveal delay={0.2}>
                 <div className="flex items-center gap-3">
                   <PhoneIcon className="shrink-0" />
-                  <a href={`tel:${contact.phoneHref}`}>{contact.phone}</a>
+                  <a
+                    href={contact.phone.href}
+                    className="hover:text-brand duration-300 transition-colors"
+                  >
+                    {contact.phone.label}
+                  </a>
                 </div>
               </Reveal>
               <Reveal delay={0.3}>
                 <div className="flex items-center gap-3">
                   <InstagramLogoIcon className="shrink-0" />
                   <a
-                    href={`https://instagram.com/${contact.instagram.replace("@", "")}`}
+                    href={contact.instagram.href}
                     target="_blank"
                     rel="noopener noreferrer"
+                    className="hover:text-brand duration-300 transition-colors"
                   >
-                    {contact.instagram}
+                    {contact.instagram.label}
                   </a>
                 </div>
               </Reveal>

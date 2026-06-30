@@ -32,8 +32,20 @@ export default function ContactInfo() {
           <Reveal delay={0.1}>
             <div className="border-t border-text/10 pt-6">
               <h3 className="font-display text-xl mb-2">Contact</h3>
-              <p className="text-muted">{contact.phone}</p>
-              <p className="text-muted mt-2">{contact.instagram}</p>
+              <a
+                href={contact.phone.href}
+                className="text-muted hover:text-brand duration-300 transition-colors"
+              >
+                {contact.phone.label}
+              </a>
+              <a
+                href={contact.instagram.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted block mt-2 hover:text-brand duration-300 transition-colors"
+              >
+                {contact.instagram.label}
+              </a>
             </div>
           </Reveal>
 

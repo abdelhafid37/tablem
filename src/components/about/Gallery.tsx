@@ -1,9 +1,6 @@
 import Section from "../layout/Section";
-import Heading from "../ui/Heading";
 import ImageFrame from "../ui/ImageFrame";
-import Reveal from "../ui/Reveal";
 import SectionIntro from "../ui/SectionIntro";
-import Text from "../ui/Text";
 
 const content = {
   eyebrow: "",
@@ -57,14 +54,14 @@ export default function Gallery() {
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
           {content.images.map((image, index) => (
-            <Reveal key={index} delay={index * 0.08}>
-              <ImageFrame
-                src={image.src}
-                alt={image.alt}
-                className="aspect-square"
-                parallax
-              />
-            </Reveal>
+            <ImageFrame
+              key={index}
+              src={image.src}
+              alt={image.alt}
+              className="aspect-square"
+              parallax
+              delay={index * 0.08}
+            />
           ))}
         </div>
       </div>

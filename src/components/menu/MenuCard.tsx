@@ -17,7 +17,9 @@ export default function MenuCard({
       />
       <div className="mt-5">
         <div className="flex justify-between items-center gap-4">
-          <h3 className="font-display text-2xl">{name}</h3>
+          <h3 className="font-display text-2xl group-hover:text-brand transition-colors duration-300">
+            {name}
+          </h3>
           <span className="text-brand font-medium shrink-0">{price} dh</span>
         </div>
 

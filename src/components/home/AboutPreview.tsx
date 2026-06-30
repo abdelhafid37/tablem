@@ -19,14 +19,12 @@ export default function AboutPreview() {
   return (
     <Section>
       <div className="grid lg:grid-cols-2 items-center gap-12">
-        <Reveal delay={0.15}>
-          <ImageFrame
-            src={content.image.src}
-            alt={content.image.alt}
-            className="aspect-4/5"
-            parallax
-          />
-        </Reveal>
+        <ImageFrame
+          src={content.image.src}
+          alt={content.image.alt}
+          className="aspect-4/5"
+          parallax
+        />
 
         <div className="space-y-6">
           <SectionIntro

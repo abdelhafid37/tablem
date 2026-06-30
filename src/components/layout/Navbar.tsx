@@ -143,7 +143,7 @@ export default function Navbar() {
                   <Link
                     key={href}
                     href={href}
-                    className="hover:text-brand"
+                    className="hover:text-brand transition-colors duration-300"
                     onClick={() => setMenuOpen(false)}
                   >
                     {label}

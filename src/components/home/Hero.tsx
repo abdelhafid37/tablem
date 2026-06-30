@@ -30,16 +30,14 @@ export default function Hero() {
             <Button label="Explore Menu" />
           </Reveal>
         </div>
-        <Reveal delay={0.15}>
-          <ImageFrame
-            src={content.img.src}
-            alt={content.img.alt}
-            className="aspect-4/5"
-            sizes="(min-width: 1024px) 50vw, 100vw"
-            priority
-            parallax
-          />
-        </Reveal>
+        <ImageFrame
+          src={content.img.src}
+          alt={content.img.alt}
+          className="aspect-4/5"
+          sizes="(min-width: 1024px) 50vw, 100vw"
+          priority
+          parallax
+        />
       </div>
     </Section>
   );

@@ -13,7 +13,7 @@ export default function Button({
   const external = /^https?:\/\//.test(href);
 
   const className =
-    "inline-flex items-center justify-center gap-2 py-3 pl-5 pr-3 text-lg transition-all duration-300 cursor-pointer md:gap-1 md:pl-3 md:pr-2 md:py-2 md:text-base bg-brand text-bg group hover:bg-brand-hover active:scale-95 leading-none";
+    "inline-flex items-center justify-center gap-2 py-4 pl-6 pr-4 text-lg transition-[background-color,scale] duration-300 cursor-pointer md:gap-1 md:pl-3 md:pr-2 md:py-2 md:text-base bg-brand text-surface group hover:bg-brand-hover active:scale-98 leading-none";
 
   const content = (
     <>
@@ -21,7 +21,7 @@ export default function Button({
       <ArrowUpRightIcon
         size={18}
         weight="bold"
-        className="transition-transform duration-300 group-hover:translate-x-0.5"
+        className="transition-transform duration-300 group-hover:translate-x-px group-hover:-translate-y-px"
       />
     </>
   );
