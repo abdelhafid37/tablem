@@ -63,11 +63,11 @@ export default function Footer() {
                 </div>
               </Reveal>
               <Reveal delay={0.2}>
-                <div className="flex items-center gap-3">
-                  <PhoneIcon className="shrink-0" />
+                <div className="flex items-center gap-3 group">
+                  <PhoneIcon className="shrink-0 group-hover:text-brand" />
                   <a
                     href={contact.phone.href}
-                    className="hover:text-brand duration-300 transition-colors"
+                    className="group-hover:text-brand duration-300 transition-colors"
                   >
                     {contact.phone.label}
                   </a>
@@ -80,7 +80,7 @@ export default function Footer() {
                     href={contact.instagram.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:text-brand duration-300 transition-colors"
+                    className="group-hover:text-brand duration-300 transition-colors"
                   >
                     {contact.instagram.label}
                   </a>
