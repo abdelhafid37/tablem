@@ -26,15 +26,13 @@ export default function AboutHero() {
           </Reveal>
         </div>
 
-        <Reveal delay={0.15}>
-          <ImageFrame
-            src={content.image.src}
-            alt={content.image.alt}
-            className="aspect-4/5"
-            sizes="(min-width: 1024px) 50vw, 100vw"
-            parallax
-          />
-        </Reveal>
+        <ImageFrame
+          src={content.image.src}
+          alt={content.image.alt}
+          className="aspect-4/5"
+          sizes="(min-width: 1024px) 50vw, 100vw"
+          parallax
+        />
       </div>
     </Section>
   );

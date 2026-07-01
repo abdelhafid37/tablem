@@ -18,8 +18,13 @@ export default function Navbar() {
   const [elevate, setElevate] = React.useState(false);
   const [hidden, setHidden] = React.useState(false);
   const lastScrollRef = React.useRef(0);
+  const openButtonRef = React.useRef<HTMLButtonElement>(null);
 
   const lenis = useLenis();
+
+  function closeMenu() {
+    setMenuOpen(false);
+  }
 
   React.useEffect(() => {
     const scroll = window.scrollY;
@@ -52,6 +57,16 @@ export default function Navbar() {
     return () => lenis.off("scroll", handleScroll);
   }, [lenis, menuOpen]);
 
+  React.useEffect(() => {
+    if (!menuOpen) return;
+    function handleKeyDown(event: KeyboardEvent) {
+      if (event.key === "Escape") closeMenu();
+    }
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [menuOpen]);
+
   return (
     <>
       <motion.header
@@ -76,6 +91,7 @@ export default function Navbar() {
 
             <div className="flex-1 md:flex justify-center">
               <Link
+                aria-label="Table M Home"
                 href={"/"}
                 className="text-2xl font-semibold tracking-wide font-display text-text"
               >
@@ -88,6 +104,7 @@ export default function Navbar() {
                 <Button />
               </div>
               <button
+                ref={openButtonRef}
                 type="button"
                 aria-label="Open navigation menu"
                 className="md:hidden"
@@ -100,10 +117,14 @@ export default function Navbar() {
         </Container>
       </motion.header>
 
-      <AnimatePresence>
+      <AnimatePresence
+        onExitComplete={() => {
+          openButtonRef.current?.focus();
+        }}
+      >
         {menuOpen && (
           <motion.div
-            onClick={() => setMenuOpen(false)}
+            onClick={closeMenu}
             key="overlay"
             initial={{ opacity: 0, pointerEvents: "none" }}
             animate={{ opacity: 1, pointerEvents: "auto" }}
@@ -117,6 +138,9 @@ export default function Navbar() {
         )}
         {menuOpen && (
           <motion.div
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="mobile-menu-title"
             key="menu"
             initial={{ x: "100%" }}
             animate={{ x: 0 }}
@@ -127,12 +151,15 @@ export default function Navbar() {
             }}
             className="md:hidden fixed right-0 top-0 h-dvh max-w-sm w-full bg-bg flex flex-col z-70"
           >
+            <h2 id="mobile-menu-title" className="sr-only">
+              Navigation
+            </h2>
             <div className="flex justify-end h-20 px-6">
               <button
                 type="button"
                 aria-label="Close navigation menu"
                 className="md:hidden"
-                onClick={() => setMenuOpen(false)}
+                onClick={closeMenu}
               >
                 <XIcon size={32} />
               </button>
@@ -144,15 +171,17 @@ export default function Navbar() {
                     key={href}
                     href={href}
                     className="hover:text-brand transition-colors duration-300"
-                    onClick={() => setMenuOpen(false)}
+                    onClick={closeMenu}
                   >
                     {label}
                   </Link>
                 ))}
               </nav>
             </div>
-            <div className="p-6 *:flex">
-              <Button />
+            <div className="p-6">
+              <div className="*:flex" onClick={closeMenu}>
+                <Button />
+              </div>
             </div>
           </motion.div>
         )}

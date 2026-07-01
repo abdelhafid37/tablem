@@ -1,7 +1,5 @@
 import Section from "../layout/Section";
-import Display from "../ui/Display";
-import Reveal from "../ui/Reveal";
-import Text from "../ui/Text";
+import PageHero from "../ui/PageHero";
 
 const content = {
   title: "Get in Touch",
@@ -11,14 +9,7 @@ const content = {
 export default function ContactHero() {
   return (
     <Section>
-      <div className="max-w-3xl space-y-6">
-        <Reveal>
-          <Display>{content.title}</Display>
-        </Reveal>
-        <Reveal delay={0.1}>
-          <Text>{content.text}</Text>
-        </Reveal>
-      </div>
+      <PageHero title={content.title} text={content.text} />
     </Section>
   );
 }
