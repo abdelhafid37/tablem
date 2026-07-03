@@ -32,6 +32,8 @@ export default function MenuPageClient() {
           onCategoryChange={setActiveCategory}
         />
 
+        <h2 className="sr-only">Available Dishes</h2>
+
         {filteredDishes.length > 0 ? (
           <MenuGrid dishes={filteredDishes} />
         ) : (
