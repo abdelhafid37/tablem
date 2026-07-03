@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Gloock } from "next/font/google";
+import { Gloock, Jost } from "next/font/google";
 import ReactLenis from "lenis/react";
 import Navbar from "@/components/layout/Navbar";
 import "./globals.css";
@@ -12,8 +12,8 @@ const gloock = Gloock({
   weight: ["400"],
 });
 
-const geist = Geist({
-  variable: "--font-geist",
+const jost = Jost({
+  variable: "--font-jost",
   subsets: ["latin"],
   weight: ["400", "500", "600"],
 });
@@ -60,7 +60,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${gloock.variable} ${geist.variable} antialiased`}>
+      <body className={`${gloock.variable} ${jost.variable} antialiased`}>
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-9999 bg-brand text-surface px-4 py-2"

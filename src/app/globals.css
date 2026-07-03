@@ -2,7 +2,7 @@
 
 @theme inline {
   --font-display: var(--font-gloock);
-  --font-body: var(--font-geist);
+  --font-body: var(--font-jost);
   --color-brand: oklch(56% 0.11706 60.387);
   --color-brand-hover: oklch(53.71% 0.10424 58.458);
   --color-bg: oklch(97.08% 0.00847 84.494);
