@@ -5,7 +5,6 @@ import Reveal from "../ui/Reveal";
 import SectionIntro from "../ui/SectionIntro";
 
 const content = {
-  eyebrow: "",
   title: "Find Us on the Map",
   text: "Located in Prestigia on Boulevard Mohamed VI, Table M is easy to reach whether you're visiting for breakfast, lunch, dinner, or an evening out.",
   cta: "Open in Google Maps",
@@ -15,11 +14,7 @@ export default function MapSection() {
   return (
     <Section>
       <div className="space-y-12">
-        <SectionIntro
-          title={content.title}
-          eyebrow={content.eyebrow}
-          text={content.text}
-        />
+        <SectionIntro title={content.title} text={content.text} />
 
         <Reveal delay={0.2}>
           <div className="aspect-video border border-text/10 overflow-hidden">

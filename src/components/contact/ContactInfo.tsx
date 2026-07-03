@@ -4,7 +4,6 @@ import Reveal from "../ui/Reveal";
 import SectionIntro from "../ui/SectionIntro";
 
 const content = {
-  eyebrow: "",
   title: "Visit Us",
   text: "Find us in the heart of Marrakech and enjoy our welcoming atmosphere from breakfast until late night.",
 };
@@ -13,11 +12,7 @@ export default function ContactInfo() {
   return (
     <Section>
       <div className="space-y-12">
-        <SectionIntro
-          title={content.title}
-          eyebrow={content.eyebrow}
-          text={content.text}
-        />
+        <SectionIntro title={content.title} text={content.text} />
 
         <div className="grid md:grid-cols-3 gap-8">
           <Reveal>

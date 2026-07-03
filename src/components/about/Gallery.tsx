@@ -3,7 +3,6 @@ import ImageFrame from "../ui/ImageFrame";
 import SectionIntro from "../ui/SectionIntro";
 
 const content = {
-  eyebrow: "",
   title: "Inside Table M",
   text: "Take a glimpse inside Table M, where elegant interiors, carefully prepared dishes, and a welcoming atmosphere come together to create memorable dining experiences.",
   images: [
@@ -46,11 +45,7 @@ export default function Gallery() {
   return (
     <Section>
       <div className="space-y-12">
-        <SectionIntro
-          title={content.title}
-          eyebrow={content.eyebrow}
-          text={content.text}
-        />
+        <SectionIntro title={content.title} text={content.text} />
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
           {content.images.map((image, index) => (
