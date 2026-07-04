@@ -8,7 +8,6 @@ import Text from "../ui/Text";
 const content = {
   title: "Modern Moroccan Food Made to Be Shared",
   text: "From relaxed breakfasts to late-night dinners, every dish is prepared with fresh ingredients, local inspiration, and a love for bringing people together.",
-
   img: {
     src: "/images/home/hero.webp",
     alt: "restaurant interior design",
@@ -27,7 +26,7 @@ export default function Hero() {
             <Text>{content.text}</Text>
           </Reveal>
           <Reveal delay={0.2}>
-            <Button label="Explore Menu" />
+            <Button label="Explore Menu" href="/menu" />
           </Reveal>
         </div>
         <ImageFrame
