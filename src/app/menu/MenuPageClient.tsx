@@ -18,19 +18,14 @@ export default function MenuPageClient() {
   const [activeCategory, setActiveCategory] = React.useState<Catgory>("all");
 
   const filteredDishes =
-    activeCategory === "all"
-      ? dishes
-      : dishes.filter((dish) => dish.category === activeCategory);
+    activeCategory === "all" ? dishes : dishes.filter((dish) => dish.category === activeCategory);
 
   return (
     <Section>
       <div className="space-y-12">
         <PageHero title={content.title} text={content.text} />
 
-        <CategoryFilter
-          activeCategory={activeCategory}
-          onCategoryChange={setActiveCategory}
-        />
+        <CategoryFilter activeCategory={activeCategory} onCategoryChange={setActiveCategory} />
 
         <h2 className="sr-only">Available Dishes</h2>
 
@@ -38,7 +33,7 @@ export default function MenuPageClient() {
           <MenuGrid dishes={filteredDishes} />
         ) : (
           <Reveal>
-            <p className="text-muted">No dishes found.</p>
+            <p className="text-muted">Comming soon.</p>
           </Reveal>
         )}
       </div>

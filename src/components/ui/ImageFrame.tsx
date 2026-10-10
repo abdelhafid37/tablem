@@ -46,11 +46,7 @@ export default function ImageFrame({
 
   const shouldAnimate = loaded && isInView;
 
-  const y = useTransform(
-    scrollYProgress,
-    [0, 1],
-    [-PARALLAX_OFFSET, PARALLAX_OFFSET],
-  );
+  const y = useTransform(scrollYProgress, [0, 1], [-PARALLAX_OFFSET, PARALLAX_OFFSET]);
 
   return (
     <div ref={ref} className={`relative overflow-hidden ${className}`}>
@@ -68,7 +64,7 @@ export default function ImageFrame({
           fill
           priority={priority}
           sizes={sizes}
-          onLoadingComplete={() => setLoaded(true)}
+          onLoad={() => setLoaded(true)}
           className={`object-cover will-change-transform transition-[scale,filter] duration-700 ease-out ${
             parallax ? "scale-110" : ""
           } ${

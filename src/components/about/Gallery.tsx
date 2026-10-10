@@ -31,11 +31,11 @@ const content = {
       alt: "",
     },
     {
-      src: "/images/about/gallery/gallery-5.webp",
+      src: "/images/about/gallery/gallery-7.webp",
       alt: "",
     },
     {
-      src: "/images/about/gallery/gallery-6.webp",
+      src: "/images/about/gallery/gallery-8.webp",
       alt: "",
     },
   ],
